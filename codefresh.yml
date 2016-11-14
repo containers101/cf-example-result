@@ -8,8 +8,6 @@ steps:
     image-name: containers101/cf-example-result
     tag: ${{CF_BRANCH}}
 
-
-
   push-to-registry:
     type: push
     #candidate: the image from the build step
