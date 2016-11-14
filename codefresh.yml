@@ -7,7 +7,7 @@ steps:
     image: codefresh/buildpacks:nodejs-5
     working-directory : ${{initial-clone}}
     commands:
-      - npm config set loglevel error
+      - echo Installing NPM modules (silent)
       - npm install
       - gulp test
       - echo $(date)
