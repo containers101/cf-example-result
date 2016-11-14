@@ -32,5 +32,5 @@ steps:
         image: containers101/cf-example-tests:master
         command: ./tests.sh
     composition-variables:
-      - VOTING_OPTION_A=Trump
-      - VOTING_OPTION_B=Clinton
+      - VOTING_OPTION_A=${{OPTION_A}}
+      - VOTING_OPTION_B=${{OPTION_B}}
