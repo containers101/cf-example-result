@@ -37,7 +37,7 @@ steps:
 
   launch-composition:
     type: launch-composition
-    environmentName: 'Test composition after build'
+    environment-name: 'Test composition after build'
     composition: './cf-compositions/voting-app-full.yml'
     composition-variables:
       - VOTING_OPTION_A=${{OPTION_A}}
