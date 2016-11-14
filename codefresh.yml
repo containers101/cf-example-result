@@ -10,12 +10,6 @@ steps:
 
 
 
-  push-to-registry:
-    type: push
-    #candidate: the image from the build step
-    candidate: ${{build-step}}
-    tag: ${{CF_BRANCH}}
-
 
   integration-tests-step:
     type: composition
@@ -34,3 +28,11 @@ steps:
     composition-variables:
       - VOTING_OPTION_A=Trump
       - VOTING_OPTION_B=Clinton
+
+
+
+  push-to-registry:
+    type: push
+    #candidate: the image from the build step
+    candidate: ${{build-step}}
+    tag: ${{CF_BRANCH}}
