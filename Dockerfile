@@ -5,7 +5,7 @@ WORKDIR /app
 RUN npm install -g nodemon
 ADD package.json /app/package.json
 RUN npm config set registry http://registry.npmjs.org
-RUN npm install && npm ls
+RUN npm install --production && npm ls
 RUN mv /app/node_modules /node_modules
 
 ADD . /app
