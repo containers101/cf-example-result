@@ -4,7 +4,7 @@ steps:
 
 
   unit-tests:
-    image: monostream/nodejs-gulp-bower:latest
+    image: codefresh/buildpacks:nodejs-5
     working-directory : ${{initial-clone}}
     commands:
       - npm config set loglevel error
