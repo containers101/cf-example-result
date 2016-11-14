@@ -1,0 +1,31 @@
+version: '1.0'
+
+steps:
+
+  build-step:
+    #title: Build My Image #Display name for the step
+    type: build
+    image-name: containers101/cf-example-result
+    tag: ${{CF_BRANCH}}
+
+
+
+  push-to-registry:
+    type: push
+    #candidate: the image from the build step
+    candidate: ${{build-step}}
+    tag: ${{CF_BRANCH}}
+
+
+  integration-tests-step:
+    type: composition
+    #location of the compostion on the filesystem of the cloned image
+    composition: './cf-compositions/voting-app-full.yml'
+    composition-candidates:
+    #this will be the image that we will test
+      integ-test:
+        image: containers101/cf-example-tests:master
+        command: ./tests.sh
+    composition-variables:
+      - VOTING_OPTION_A=Trump
+      - VOTING_OPTION_B=Clinton
