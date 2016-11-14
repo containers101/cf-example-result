@@ -34,3 +34,8 @@ steps:
     composition-variables:
       - VOTING_OPTION_A=${{OPTION_A}}
       - VOTING_OPTION_B=${{OPTION_B}}
+
+  launch-composition:
+      type: launch-composition
+      environmentName: 'Test composition after build'
+      composition: './cf-compositions/voting-app-full.yml'
