@@ -6,6 +6,7 @@ var express = require('express'),
     methodOverride = require('method-override'),
     app = express(),
     server = require('http').Server(app),
+    VoteCollector = require('./VoteCollector'),
     io = require('socket.io')(server);
 
 io.set('transports', ['polling']);
@@ -40,6 +41,7 @@ async.retry(
       return console.err("Giving up");
     }
     console.log("Connected to db");
+    //start polling for votes
     getVotes(client);
   }
 );
@@ -50,7 +52,7 @@ function getVotes(client) {
     if (err) {
       console.error("Error performing query: " + err);
     } else {
-      var votes = collectVotesFromResult(result);
+      var votes = VoteCollector.collectVotesFromResult(result);
       io.sockets.emit("scores", JSON.stringify(votes));
     }
 
@@ -58,17 +60,6 @@ function getVotes(client) {
   });
 }
 
-
-
-function collectVotesFromResult(result) {
-  var votes = {a: 0, b: 0};
-
-  result.rows.forEach(function (row) {
-    votes[row.vote] = parseInt(row.count);
-  });
-
-  return votes;
-}
 
 app.use(cookieParser());
 app.use(bodyParser());
