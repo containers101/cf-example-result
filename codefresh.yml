@@ -7,7 +7,7 @@ steps:
     image: monostream/nodejs-gulp-bower:latest
     working-directory : ${{initial-clone}}
     commands:
-      - npm config set loglevel warn
+      - npm config set loglevel error
       - npm install
       - gulp test
       - echo $(date)
