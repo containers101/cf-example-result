@@ -3,13 +3,13 @@ version: '1.0'
 steps:
 
 
- unit-tests:
-   image: monostream/nodejs-gulp-bower:latest
-   working-directory : ${{initial-clone}}
-   commands:
-     #- npm install
-     - gulp test
-     - echo $(date)
+  unit-tests:
+    image: monostream/nodejs-gulp-bower:latest
+    working-directory : ${{initial-clone}}
+    commands:
+      #- npm install
+      - gulp test
+      - echo $(date)
 
   build-step:
     #title: Build My Image #Display name for the step
