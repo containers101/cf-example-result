@@ -7,7 +7,6 @@ this application is based on Docker's example [voting app](https://github.com/do
 
 The Application is a demo that let you use build an advanced composition that uses Python, Redis, Postgres, Node.js and .Net.
 
-
 Architecture
 -----
 
