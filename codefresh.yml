@@ -3,28 +3,6 @@ version: '1.0'
 steps:
 
 
-  unit-tests:
-    image: codefresh/buildpacks:nodejs-5
-    working-directory : ${{initial-clone}}
-    commands:
-      - echo Installing NPM modules silent
-      - npm install
-      - gulp test
-      - echo $(date)
-
-  build-step:
-    #title: Build My Image #Display name for the step
-    type: build
-    image-name: containers101/cf-example-result
-    tag: ${{CF_BRANCH}}
-
-  push-to-registry:
-    type: push
-    #candidate: the image from the build step
-    candidate: ${{build-step}}
-    tag: ${{CF_BRANCH}}
-
-
   integration-tests-step:
     type: composition
     #location of the compostion on the filesystem of the cloned image
