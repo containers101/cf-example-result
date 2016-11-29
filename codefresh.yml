@@ -25,6 +25,7 @@ steps:
     tag: ${{CF_BRANCH}}
 
 
+
   integration-tests-step:
     type: composition
     #location of the compostion on the filesystem of the cloned image
