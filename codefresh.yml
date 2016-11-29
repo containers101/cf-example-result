@@ -50,3 +50,17 @@ steps:
     composition-variables:
       - VOTING_OPTION_A=${{OPTION_A}}
       - VOTING_OPTION_B=${{OPTION_B}}
+
+
+ deploy_to_ ecs:
+     title: Deploy to ECS
+     image: codefresh/cf-deploy-ecs
+     commands:
+       - cfecs-update --image-name containers101/cf-example-result --image-tag ${{CF_BRANCH}} eu-west-1 vote-app vote-srv
+     environment:
+       - AWS_ACCESS_KEY_ID=${{AWS_ACCESS_KEY_ID}}
+       - AWS_SECRET_ACCESS_KEY=${{AWS_SECRET_ACCESS_KEY}}
+     when:
+      branch:
+        only:
+          - master
