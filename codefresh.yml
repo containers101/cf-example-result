@@ -62,4 +62,4 @@ steps:
     when:
       condition:
         all:
-          pushCommit: 'includes(lower("${{CF_COMMIT_MESSAGE}}"), "[deploy]") == false'
+          pushCommit: 'includes(lower("${{CF_COMMIT_MESSAGE}}"), "[deploy]") == true'
