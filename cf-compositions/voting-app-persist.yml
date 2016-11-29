@@ -1,0 +1,27 @@
+version: '2'
+services:
+  result:
+    image: 'containers101/cf-example-result:master'
+    command: nodemon --debug server.js
+    ports:
+      - "80"
+    extra_hosts:
+      - "db:$PERSIST_IP"
+    environment:
+      - OPTION_A=$VOTING_OPTION_A
+      - OPTION_B=$VOTING_OPTION_B
+  worker:
+    image: 'containers101/cf-example-worker:master'
+    extra_hosts:
+      - "db:$PERSIST_IP"
+      - "redis:$PERSIST_IP"
+  vote:
+    image: 'containers101/cf-example-vote:master'
+    command: python app.py
+    ports:
+      - "80"
+    extra_hosts:
+      - "redis:$PERSIST_IP"
+    environment:
+      - OPTION_A=$VOTING_OPTION_A
+      - OPTION_B=$VOTING_OPTION_B

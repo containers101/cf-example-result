@@ -3,10 +3,10 @@
 Voting Results
 ==============
 
+
 this application is based on Docker's example [voting app](https://github.com/docker/example-voting-app). The app let you vote between two different things (default Cats vs. Dogs). 
 
 The Application is a demo that let you use build an advanced composition that uses Python, Redis, Postgres, Node.js and .Net.
-
 
 Architecture
 -----
