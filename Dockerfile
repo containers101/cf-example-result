@@ -10,6 +10,9 @@ RUN mv /app/node_modules /node_modules
 
 ADD . /app
 
+ARG OPTION_A
+ARG OPTION_B
+
 ENV PORT 80
 EXPOSE 80
 
