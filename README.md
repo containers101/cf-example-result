@@ -119,4 +119,10 @@ Getting started
    ![screen](readme/screen-params.png)
    * Save and Launch the app as before and open the application. You will now see the two options.
 
+## About Containers 101
+
+[Containers 101](https://www.meetup.com/Containers-101-meetup/) is online/offline meetup group based in Mountain View that provides guides and helps developers work with Containers. Created by [Codefresh](https://codefresh.io/) which provides environments for every commit, Docker CI and CD, and an embedded registry. 
+
+[Join Containers 101](https://www.meetup.com/Containers-101-meetup/)
+Learn more about [Codefresh](https://codefresh.io/)
 
