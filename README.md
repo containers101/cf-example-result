@@ -118,6 +118,7 @@ Getting started
    * Add 2 Composition Variables to VOTE_OPTION_A and VOTE_OPTION_B with values that you choose.
    ![screen](readme/screen-params.png)
    * Save and Launch the app as before and open the application. You will now see the two options.
+```
 
 ## About Containers 101
 
